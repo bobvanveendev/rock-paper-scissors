@@ -1,0 +1,28 @@
+/* System buttons */
+.system-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* RPS buttons */
+.button-container {
+  display: flex;
+  gap: 3rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: unset;
+  border: 1px solid #eee;
+  border-radius: 100%;
+  padding: 1.5rem;
+}
+
+.fa-solid {
+  font-size: 2.5rem;
+  color: #eee;
+}

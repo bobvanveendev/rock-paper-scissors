@@ -3,8 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
+    <link rel="stylesheet" type="text/css" href="css/score-container.css" />
+    <link rel="stylesheet" type="text/css" href="css/buttons.css" />
+    <script src="/js/script.js" defer></script>
   </head>
-  <body></body>
+
+  <body>
+    <div class="container">
+      <div class="score-container">
+        <h1 class="title">
+          Rock <br />
+          Paper <br />
+          Scissors
+        </h1>
+      </div>
+      <div class="system-button-container">
+        <button class="start-button">Start</button>
+        <button class="reset-button">Reset</button>
+      </div>
+      <div class="button-container">
+        <button class="buttons rock-button">
+          <i class="fa-solid fa-hand-back-fist"></i>
+        </button>
+        <button class="buttons paper-button">
+          <i class="fa-solid fa-hand"></i>
+        </button>
+        <button class="buttons scissors-button">
+          <i class="fa-solid fa-hand-scissors"></i>
+        </button>
+      </div>
+    </div>
+  </body>
 </html>
