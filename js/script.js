@@ -4,17 +4,21 @@ let gameActive = false;
 
 function getComputerChoice(max) {
   let result = Math.floor(Math.random() * max);
+  let computerChoice;
+
   if (result === 0) {
-    return "rock";
+    computerChoice = "rock";
   } else if (result === 1) {
-    return "paper";
+    computerChoice = "paper";
   } else {
-    return "scissors";
+    computerChoice = "scissors";
   }
+  return computerChoice;
 }
 
 function getHumanChoice(event) {
   let humanChoice;
+
   if (event.currentTarget.classList.contains("rock-button")) {
     humanChoice = "rock";
   } else if (event.currentTarget.classList.contains("paper-button")) {
@@ -22,26 +26,27 @@ function getHumanChoice(event) {
   } else {
     humanChoice = "scissors";
   }
+  return humanChoice;
 }
 
+// Select buttons
 const buttons = document.querySelectorAll(".buttons");
+const startButton = document.querySelector(".start-button");
+const resetButton = document.querySelector(".reset-button");
 
 buttons.forEach((button) => {
   button.addEventListener("click", (event) => {
-    const container = document.querySelector(".container");
+    const scoreContainer = document.querySelector(".score-container");
     const userContext = document.createElement("h3");
     if (event.currentTarget.classList.contains("rock-button")) {
-      humanChoice = "rock";
       userContext.textContent = "Rock";
-      container.appendChild(userContext);
+      scoreContainer.appendChild(userContext);
     } else if (event.currentTarget.classList.contains("paper-button")) {
-      humanChoice = "paper";
       userContext.textContent = "Paper";
-      container.appendChild(userContext);
+      scoreContainer.appendChild(userContext);
     } else {
-      humanChoice = "scissors";
       userContext.textContent = "Scissors";
-      container.appendChild(userContext);
+      scoreContainer.appendChild(userContext);
     }
   });
 });
