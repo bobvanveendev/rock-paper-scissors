@@ -1,9 +1,21 @@
 .score-container {
-  border: 4px solid white;
+  border: 4px solid #eee;
   border-radius: 1rem;
   padding: 2rem;
 }
 
 .title {
-  color: white;
+  color: #eee;
+}
+
+.game-start {
+  color: #eee;
+}
+
+/* Start game container */
+.start-game-container {
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  height: 0;
 }

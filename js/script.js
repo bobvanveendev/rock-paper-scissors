@@ -34,22 +34,28 @@ const buttons = document.querySelectorAll(".buttons");
 const startButton = document.querySelector(".start-button");
 const resetButton = document.querySelector(".reset-button");
 
-buttons.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    const scoreContainer = document.querySelector(".score-container");
-    const userContext = document.createElement("h3");
-    if (event.currentTarget.classList.contains("rock-button")) {
-      userContext.textContent = "Rock";
-      scoreContainer.appendChild(userContext);
-    } else if (event.currentTarget.classList.contains("paper-button")) {
-      userContext.textContent = "Paper";
-      scoreContainer.appendChild(userContext);
-    } else {
-      userContext.textContent = "Scissors";
-      scoreContainer.appendChild(userContext);
-    }
-  });
-});
+// Text select
+const title = document.querySelector(".title");
+
+// Containers
+const scoreContainer = document.querySelector(".score-container");
+const startGameContainer = document.querySelector(".start-game-container");
+
+// buttons.forEach((button) => {
+//   button.addEventListener("click", (event) => {
+//     const userContext = document.createElement("h3");
+//     if (event.currentTarget.classList.contains("rock-button")) {
+//       userContext.textContent = "Rock";
+//       scoreContainer.appendChild(userContext);
+//     } else if (event.currentTarget.classList.contains("paper-button")) {
+//       userContext.textContent = "Paper";
+//       scoreContainer.appendChild(userContext);
+//     } else {
+//       userContext.textContent = "Scissors";
+//       scoreContainer.appendChild(userContext);
+//     }
+//   });
+// });
 
 function playGame() {
   function playRound(humanChoice, computerChoice) {
@@ -70,36 +76,31 @@ function playGame() {
     }
   }
 
-  function startGame() {}
+  function startGame() {
+    buttons.forEach((button) => {
+      startButton.disabled = true;
+      button.disabled = false;
+      title.classList.add("fade-out");
+      startGameContainer.classList.add("fade-in");
+    });
+  }
 
   function endGame() {}
 
   function resetGame() {}
 
-  let humanSelection = getHumanChoice();
-  let computerSelection = getComputerChoice(3);
+  startButton.addEventListener("click", () => {
+    startGame();
+  });
 
-  playRound(humanSelection, computerSelection);
+  buttons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const humanChoice = getHumanChoice(event);
+      const computerChoice = getComputerChoice(3);
 
-  // humanSelection = getHumanChoice();
-  // computerSelection = getComputerChoice(3);
-
-  // // playRound(humanSelection, computerSelection);
-
-  // // humanSelection = getHumanChoice();
-  // // computerSelection = getComputerChoice(3);
-
-  // // playRound(humanSelection, computerSelection);
-
-  // // humanSelection = getHumanChoice();
-  // // computerSelection = getComputerChoice(3);
-
-  // // playRound(humanSelection, computerSelection);
-
-  // // humanSelection = getHumanChoice();
-  // // computerSelection = getComputerChoice(3);
-
-  // // playRound(humanSelection, computerSelection);
+      playRound(humanChoice, computerChoice);
+    });
+  });
 
   if (humanScore > computerScore) {
     console.log("Human wins");
