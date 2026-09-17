@@ -41,21 +41,11 @@ const title = document.querySelector(".title");
 const scoreContainer = document.querySelector(".score-container");
 const startGameContainer = document.querySelector(".start-game-container");
 
-// buttons.forEach((button) => {
-//   button.addEventListener("click", (event) => {
-//     const userContext = document.createElement("h3");
-//     if (event.currentTarget.classList.contains("rock-button")) {
-//       userContext.textContent = "Rock";
-//       scoreContainer.appendChild(userContext);
-//     } else if (event.currentTarget.classList.contains("paper-button")) {
-//       userContext.textContent = "Paper";
-//       scoreContainer.appendChild(userContext);
-//     } else {
-//       userContext.textContent = "Scissors";
-//       scoreContainer.appendChild(userContext);
-//     }
-//   });
-// });
+// Player
+const playerScoreSpan = document.querySelector(".player-score span");
+
+// Computer
+const computerScoreSpan = document.querySelector(".computer-score span");
 
 function playGame() {
   function playRound(humanChoice, computerChoice) {
@@ -63,15 +53,22 @@ function playGame() {
       console.log("It's a tie");
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
       humanScore++;
+      playerScoreSpan.textContent = humanScore;
+
       console.log("You win! Rock beats scissors.");
     } else if (humanChoice === "paper" && computerChoice === "rock") {
       humanScore++;
+      playerScoreSpan.textContent = humanScore;
+
       console.log("You win! Paper beats rock.");
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
       humanScore++;
+      playerScoreSpan.textContent = humanScore;
+
       console.log("You win! Scissors beats paper.");
     } else {
       computerScore++;
+      computerScoreSpan.textContent = computerScore;
       console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
     }
   }
@@ -82,6 +79,8 @@ function playGame() {
       button.disabled = false;
       title.classList.add("fade-out");
       startGameContainer.classList.add("fade-in");
+      playerScoreSpan.textContent = humanScore;
+      computerScoreSpan.textContent = computerScore;
     });
   }
 

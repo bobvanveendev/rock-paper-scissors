@@ -1,20 +1,18 @@
 # Waar ben ik gebleven?
 
-De vorige keer heb ik de start functionaliteit zo gebouwd:
+De vorige keer heb ik het volgende uitgevoerd:
 
-- Bij start:
-- Title verdwijnt en neemt geen height meer in beslag en heeft geen height meer.
-- Player score, player choice, computer score en computer choice komen dan naar voren.
-- Rock, paper en scissors buttons zijn actief.
-
-- De rock paper en scissors buttons geven al waarde mee als ze actief zijn.
+- De player en computer score tonen in hun span en een start value meegegeven
 
 # Volgende keer:
 
-## Eerst doen:
-
+- [ ] De human score en computer score naast elkaar weergeven.
+- [ ] De optie "It's a tie!" weergeven.
 - [ ] De player choice tonen in de game-start-container.
 - [ ] De computer choice tonen in de game-start-container.
 - [ ] De round win teksten weergeven in de game-start-container. Hier ook de HTML nog voor maken.
-- [ ] De human score tonen.
-- [ ] De computer score tonen.
+- [ ] De reset button functionaliteit toevoegen.
+- [ ] De win round functionaliteit toevoegen.
+- [ ] De start en reset button styling aanpassen.
+- [ ] De mobiele styling aanpassen.
+- [ ] De score container een vaste hoogte geven.
