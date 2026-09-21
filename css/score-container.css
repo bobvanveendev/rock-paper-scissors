@@ -1,7 +1,10 @@
 .score-container {
+  display: flex;
+  align-items: center;
   border: 4px solid #eee;
   border-radius: 1rem;
   padding: 2rem;
+  min-height: 10rem;
 }
 
 .title {
@@ -16,6 +19,21 @@
 .start-game-container {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   opacity: 0;
   height: 0;
+  width: 0;
+  gap: 4rem;
+}
+
+/* Game score container */
+.game-score-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Choice container */
+.choice-container {
+  display: flex;
+  justify-content: space-between;
 }
