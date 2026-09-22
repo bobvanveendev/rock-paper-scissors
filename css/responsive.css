@@ -1,0 +1,82 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100dvh;
+  height: auto;
+  margin: 0;
+  padding: 1rem;
+}
+
+.container {
+  width: min(100%, 30rem);
+}
+
+@media (max-width: 480px) {
+  .container {
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .score-container {
+    min-height: 13.5rem;
+    padding: 1rem;
+  }
+
+  .start-game-container {
+    gap: 2rem;
+  }
+
+  .game-score-container,
+  .choice-container {
+    gap: 1rem;
+  }
+
+  .game-score-container > div,
+  .choice-container > div {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .computer-score,
+  .computer-choice {
+    text-align: right;
+  }
+
+  .game-result {
+    max-width: none;
+    font-size: 1rem;
+  }
+
+  .system-button-container {
+    gap: 1.5rem;
+  }
+
+  .button-container {
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .buttons {
+    width: clamp(4rem, 21vw, 5rem);
+    aspect-ratio: 1;
+    padding: 0;
+  }
+
+  .fa-solid {
+    font-size: clamp(2rem, 9vw, 2.5rem);
+  }
+}
+
+@media (max-width: 350px) {
+  .player-score,
+  .computer-score,
+  .player-choice,
+  .computer-choice {
+    font-size: 0.8rem;
+  }
+}
